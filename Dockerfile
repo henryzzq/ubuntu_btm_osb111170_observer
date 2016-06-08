@@ -24,9 +24,9 @@ RUN wget --no-check-certificate 'https://docs.google.com/uc?export=download&id=0
 
 RUN wget --no-check-certificate 'https://docs.google.com/uc?export=download&id=0B-NEimEr29Wdamh5WWY2eVBVY00' -O startWL.sh
 
-RUN wget --no-check-certificate 'https://docs.google.com/uc?export=download&id=0B-NEimEr29WdTm43MFFqTkU0aEU' -O startWL_OSB.sh
+RUN wget --no-check-certificate 'https://docs.google.com/uc?export=download&id=0B-NEimEr29WdN1J6bTE4Tk5WYUE' -O startWL_OSB.sh
 
-RUN wget --no-check-certificate 'https://docs.google.com/uc?export=download&id=0B-NEimEr29WdOTlMaDRJNUw1azg' -O main_osb.sh
+RUN wget --no-check-certificate 'https://docs.google.com/uc?export=download&id=0B-NEimEr29WdYzg2eE1JQ0NpWHc' -O main_osb.sh
 
 RUN mv /deployOB.sh /util && \
     mv /startWL.sh /util && \
