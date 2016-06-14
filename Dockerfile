@@ -7,6 +7,7 @@ USER root
 ENV WLSERVER_HOME /root/Oracle/Middleware/wlserver_10.3
 ENV WLDOMAIN_HOME /root/Oracle/Middleware/user_projects/domains/osb_domain
 ENV PATH $PATH:/util
+ENV BTM_PORT 8080
 
 RUN mkdir -p /util
 
@@ -33,6 +34,6 @@ RUN mv /deployOB.sh /util && \
     chmod a+x /util/*.sh
     
 # Expose Node Manager default port, and also default http/https ports for admin console
-EXPOSE 7001 5556 8453 36963
+EXPOSE 7001 8001 5556 8453 36963
 
 CMD ["/util/main_osb.sh"]
