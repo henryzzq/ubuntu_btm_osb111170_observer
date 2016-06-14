@@ -23,7 +23,7 @@ RUN echo 'echo BTMHOST=$BTM_HOST:$BTM_PORT' >> /root/.bashrc && \
 
 RUN wget --no-check-certificate 'https://docs.google.com/uc?export=download&id=0B-NEimEr29WdeHlDdDdCSFkxZWc' -O deployOB.sh
 
-RUN wget --no-check-certificate 'https://docs.google.com/uc?export=download&id=0B-NEimEr29WdNVRsS0J6MFVtOWM' -O startWL_OSB.sh
+RUN wget --no-check-certificate 'https://docs.google.com/uc?export=download&id=0B-NEimEr29WdamVPY2ZlMVdLN00' -O startWL_OSB.sh
 
 RUN wget --no-check-certificate 'https://docs.google.com/uc?export=download&id=0B-NEimEr29WdYzg2eE1JQ0NpWHc' -O main_osb.sh
 
