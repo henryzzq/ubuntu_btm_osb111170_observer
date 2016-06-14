@@ -8,9 +8,10 @@ ENV WLSERVER_HOME /root/Oracle/Middleware/wlserver_10.3
 ENV WLDOMAIN_HOME /root/Oracle/Middleware/user_projects/domains/osb_domain
 ENV PATH $PATH:/util
 
-RUN mkdir /util
+RUN mkdir -p /util
 
 RUN echo 'echo BTMHOST=$BTM_HOST:$BTM_PORT' >> /root/.bashrc && \
+    echo 'echo DBHOST=$DB_HOST:$DB_PORT' >> /root/.bashrc && \
     echo 'echo WLSERVER_HOME=$WLSERVER_HOME' >> /root/.bashrc && \
     echo 'echo WLDOMAIN_HOME=$WLDOMAIN_HOME' >> /root/.bashrc && \
     echo 'source $WLDOMAIN_HOME/bin/setDomainEnv.sh' >> /root/.bashrc && \
@@ -22,14 +23,11 @@ RUN echo 'echo BTMHOST=$BTM_HOST:$BTM_PORT' >> /root/.bashrc && \
 
 RUN wget --no-check-certificate 'https://docs.google.com/uc?export=download&id=0B-NEimEr29WdeHlDdDdCSFkxZWc' -O deployOB.sh
 
-RUN wget --no-check-certificate 'https://docs.google.com/uc?export=download&id=0B-NEimEr29Wdamh5WWY2eVBVY00' -O startWL.sh
-
-RUN wget --no-check-certificate 'https://docs.google.com/uc?export=download&id=0B-NEimEr29WdN1J6bTE4Tk5WYUE' -O startWL_OSB.sh
+RUN wget --no-check-certificate 'https://docs.google.com/uc?export=download&id=0B-NEimEr29WdNVRsS0J6MFVtOWM' -O startWL_OSB.sh
 
 RUN wget --no-check-certificate 'https://docs.google.com/uc?export=download&id=0B-NEimEr29WdYzg2eE1JQ0NpWHc' -O main_osb.sh
 
 RUN mv /deployOB.sh /util && \
-    mv /startWL.sh /util && \
     mv /startWL_OSB.sh /util && \
     mv /main_osb.sh /util && \
     chmod a+x /util/*.sh
